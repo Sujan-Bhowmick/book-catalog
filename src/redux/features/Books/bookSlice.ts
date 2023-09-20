@@ -1,19 +1,22 @@
-import {  createSlice } from "@reduxjs/toolkit";
+import {  PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-// export interface bookState {
-//  books: array
-// }
+ interface IBook {
+  search: string
+ }
 
-const initialState = {
-  books: []
+const initialState: IBook = {
+  search : ""
 }
 
 export const bookSlice = createSlice({
   name: "book",
   initialState,
   reducers: {
-    // push: (state, action: PayloadAction<object>) => {
-    //   state.books = 
-    // }
+    searching: (state, action: PayloadAction<string>) => {
+      state.search = action.payload
+    }
   }
-})
+});
+
+export const {searching} = bookSlice.actions;
+export default bookSlice.reducer;
