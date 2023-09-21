@@ -11,7 +11,7 @@ interface Post {
 export const bookApi = createApi({
   reducerPath: "bookApi",
   tagTypes:["books"],
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://book-server-iv67.onrender.com/api/v1" }),
   endpoints: (builder) => ({
     getBook: builder.query({
       query: () => `/book`,
